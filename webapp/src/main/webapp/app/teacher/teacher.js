@@ -44,8 +44,13 @@ angular.module('myApp.teacher', ['ngRoute'])
                     },
                     score:$scope.students[i].score
                 };
-                if ($scope.students[i].score != null) {
+                if ($scope.students[i].score != null && $scope.students[i].score.length > 0) {
                     results.push(result);
+                }
+                if(results.length > 10){
+                    alert("Entered results for "+results.length+" Can send test results for 10 students only");
+                    results = [];
+                    return;
                 }
 
             }

@@ -50,7 +50,9 @@ public class TestResultController {
                     public void afterCommit() {
                         TestResult tResult = em.find(TestResult.class, newResult.getId());
                         for (Result result : tResult.getResults()) {
-                            mailer.sendMails(result.getUser().getEmail(), "Score:" + result.getScore(), result.getSubject().getName());
+
+                            String message = "Dear " + result.getUser().getLastName() + " , you score for test " + result.getTestResult().getName() + " is " + result.getScore() ;
+                            mailer.sendMails(result.getUser().getEmail(), message, result.getSubject().getName());
                         }
 
                     }

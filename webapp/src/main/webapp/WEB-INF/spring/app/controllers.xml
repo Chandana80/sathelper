@@ -20,7 +20,7 @@
 
 	<bean id="appInitializer" class="com.ojass.sathelper.util.AppInit"/>
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host" value="mail.mycompany.com"/>
+		<property name="host" value="localhost"/>
 	</bean>
 	<bean id="mailer" class="com.ojass.sathelper.util.Mailer"/>
 </beans>

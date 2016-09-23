@@ -11,6 +11,7 @@ This Project is build on top of ``spring-mvc-jpa-archetype`` and has following c
  * Deployment via Cargo plugin
  * Angular JS as rest client
  * Spring Security for Authentication and Authorization
+ * For emails used fake SMTP server
 
 ## Building and Running the project
 
