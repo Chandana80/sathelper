@@ -68,7 +68,7 @@ public class UsersController {
     @ResponseBody
     public List<User> listStudents(@PathVariable String subject) {
         logger.info("retreiving : ", subject);
-        return em.createQuery("Select u from User u join u.subjects s where s.name=:subject")
+        return em.createQuery("Select u from User u join u.subjects s join u.roles r where s.name=:subject and r.name='ROLE_STUDENT'")
                 .setParameter("subject", subject).getResultList();
     }
 
@@ -88,7 +88,7 @@ public class UsersController {
             User u = findUserByUserName(user.getEmail());
 
             if (u != null && u.getPassword().equals(user.getPassword())) {
-                //TODO:This needs to be done in a token generator.
+                //TODO:This needs to be done in a token generator which may implement JWT.
                 StringBuilder roles = new StringBuilder();
                 for (Role r : u.getRoles()) {
                     roles.append(r.getName()).append("~");

@@ -2,7 +2,7 @@ package  com.ojass.sathelper.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,9 +16,9 @@ public class ExceptionHandler {
         this.messageSource = messageSource;
     }
 
-    @org.springframework.web.bind.annotation.ExceptionHandler(DataIntegrityViolationException.class)
+    @org.springframework.web.bind.annotation.ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody
-    public String processValidationError(DataIntegrityViolationException ex) {
+    public String processValidationError(MethodArgumentNotValidException ex) {
         return  ex.getLocalizedMessage();
     }
 
