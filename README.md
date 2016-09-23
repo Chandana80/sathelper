@@ -46,5 +46,7 @@ Navigate to webapp directory and execute the following command:
 ## TODO
     * Implement Caching
     * More functional Tests
+    * UI Validation
+    * UI beautification
     
 
