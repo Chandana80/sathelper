@@ -1,0 +1,22 @@
+<div>
+    <div>
+        <div class="alert-info">
+            <div>Name: <input type="text" ng-model="testResults.name"/></div>
+            <div>Date(yyyy-mm-dd): <input type="text" ng-model="testResults.testDate" type="date" /></div>
+</div>
+
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Score</td>
+    </tr>
+    <tr ng-repeat="student in students">
+        <td style="padding: 0.5em">{{student.firstName}},{{student.lastName}}</td>
+        <td style="padding: 0.5em"><input ng-model="student.score"/></td>
+    </tr>
+</table>
+
+<br/>
+<div><button type="button" class="btn btn-success" ng-click="save()">Save Results</button></div>
+</div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <section class="container">
+        <div class="container-page">
+            <div class="col-md-6">
+                <h3 class="dark-grey">Registration</h3>
+
+                <div class="form-group col-lg-12">
+                    <label>First Name</label>
+                    <input type="" ng-model="user.firstName" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label>Last Name</label>
+                    <input type="" ng-model="user.lastName" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Password</label>
+                    <input type="password" ng-model="passwords.password1" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Repeat Password</label>
+                    <input type="password" ng-model="passwords.password2" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Email Address</label>
+                    <input type="" name="" ng-model="user.email" class="form-control" id="" value="">
+                </div>
+
+                <div class="col-sm-6">
+                    <input type="checkbox" class="checkbox" ng-model="isTeacher"/>Teacher?
+                </div>
+
+                <div class="col-sm-6">
+                    <select ng-model="selectedSubject" ng-options="subject.id as subject.name for subject in subjects">
+                        <option value="ALL">ALL</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="dark-grey">Terms and Conditions</h3>
+                <p>
+                    By clicking on "Register" you agree to The Company's' Terms and Conditions
+                </p>
+                <p>
+                    A Teach can be registered to teach only one subject.
+                </p>
+                <p>
+                    A student can be registered with either math or english or both
+                </p>
+                <button type="submit" class="btn btn-primary" ng-click="register()">Register</button>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="external/css/normalize.css">
+  <link rel="stylesheet" href="external/css/main.css">
+  <link rel="stylesheet" href="external/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="external/js/modernizr-2.8.3.min.js"></script>
+</head>
+<body >
+  <div class="alert-danger" ng-if="errors"> {{errors}}</div>
+  <div ng-if="authToken" class="logout"><a ng-click="logout()" >Logout</a></div>
+  <div ng-view></div>
+
+  <script src="external/js/jquery-1.12.0.min.js"></script>
+  <script src="external/js/angular.js"></script>
+  <script src="external/js/angular-route.js"></script>
+  <script src="external/js/ui-bootstrap-tpls-1.1.2.min.js"></script>
+  <script src="app.js"></script>
+  <script src="teacher/teacher.js"></script>
+  <script src="login/login.js"></script>
+</body>
+</html>

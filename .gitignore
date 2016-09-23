@@ -1,0 +1,65 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.exc
+*.ref
+*.sha1
+*.ser
+bin
+/**/build
+/**/buildPlugins
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Custom exclusion #
+####################
+target
+target-eclipse
+Debug
+Release
+
+# eclipse project files #
+#########################
+.classpath
+.project
+.prefs
+.settings
+
+# Misc.
+#######
+_viminfo
+/build/
+
+# idea project files #
+######################
+/.idea/
+.idea
+*.iml

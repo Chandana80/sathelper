@@ -1,0 +1,32 @@
+<b:beans xmlns="http://www.springframework.org/schema/security"
+         xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+    <b:bean id="customAuthenticationProvider" class="com.ojass.sathelper.config.CustomAuthenticationProvider"/>
+    <b:bean id="tokenAuthEntryPoint" class="com.ojass.sathelper.config.TokenAuthEntryPoint"/>
+    <!-- Filter for REST services. -->
+    <b:bean id="tokenAuthenticationFilter"  class="com.ojass.sathelper.config.TokenAuthenticationFilter">
+        <b:property name="authenticationManager" ref="authenticationManager"/>
+    </b:bean>
+    <http use-expressions="true"  entry-point-ref="tokenAuthEntryPoint">
+        <intercept-url pattern="/users/login" access="permitAll" />
+        <intercept-url pattern="/users/subject" access="isAuthenticated()" />
+        <intercept-url pattern="/register" access="permitAll" />
+        <intercept-url pattern="/register/**" access="permitAll" />
+        <intercept-url pattern="/subjects" access="permitAll" />
+
+        <intercept-url pattern="/students/**" access="hasRole('ROLE_TEACHER')" />
+        <intercept-url pattern="/testResults" access="hasRole('ROLE_TEACHER')" />
+        <intercept-url pattern="/profile" access="isAuthenticated()" />
+        <intercept-url pattern="/pages/**" access="permitAll" />
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <custom-filter ref="tokenAuthenticationFilter" before="PRE_AUTH_FILTER"/>
+
+    </http>
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider ref="customAuthenticationProvider"/>
+            </authentication-manager>
+</b:beans>
